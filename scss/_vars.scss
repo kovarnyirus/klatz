@@ -1,0 +1,21 @@
+$default-font: 'Montserrat', sans-serif;
+$text: #000;
+$accent: #2051c8;
+$ac_prod1: #20c4f4;
+$ac_prod2: #d7df23;
+$ac_prod3: #f47920;
+$ac_prod4: #b41e8e;
+$ac_prod5: #9aca3c;
+$ac_prod6: #f9c0c7;
+$ac_prod7: #008c55;
+$ac_prod8: #62c3a5;
+$h_weight: bold;
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$default-font-size: 18;
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+ 
+$gutter: $grid-gutter-width;

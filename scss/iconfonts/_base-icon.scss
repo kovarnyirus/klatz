@@ -1,0 +1,116 @@
+@font-face {
+	font-family: "base-icon";
+	src: url('../fonts/base-icon.eot');
+	src: url('../fonts/base-icon.eot?#iefix') format('eot'),
+		url('../fonts/base-icon.woff2') format('woff2'),
+		url('../fonts/base-icon.woff') format('woff'),
+		url('../fonts/base-icon.ttf') format('truetype'),
+		url('../fonts/base-icon.svg#base-icon') format('svg');
+}
+
+[class*="base-icon-"],
+[class^="base-icon-"] {
+	font-family: "base-icon";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.base-icon-check:before {
+	content: "\E001";
+}
+
+.base-icon-close:before {
+	content: "\E002";
+}
+
+.base-icon-down:before {
+	content: "\E003";
+}
+
+.base-icon-fb:before {
+	content: "\E004";
+}
+
+.base-icon-ig:before {
+	content: "\E005";
+}
+
+.base-icon-next-2:before {
+	content: "\E006";
+}
+
+.base-icon-next:before {
+	content: "\E007";
+}
+
+.base-icon-plus:before {
+	content: "\E008";
+}
+
+.base-icon-prev-2:before {
+	content: "\E009";
+}
+
+.base-icon-prev:before {
+	content: "\E00A";
+}
+
+.base-icon-tooth1:before {
+	content: "\E00B";
+}
+
+.base-icon-tooth10:before {
+	content: "\E00C";
+}
+
+.base-icon-tooth11:before {
+	content: "\E00D";
+}
+
+.base-icon-tooth12:before {
+	content: "\E00E";
+}
+
+.base-icon-tooth2:before {
+	content: "\E00F";
+}
+
+.base-icon-tooth3:before {
+	content: "\E010";
+}
+
+.base-icon-tooth4:before {
+	content: "\E011";
+}
+
+.base-icon-tooth5:before {
+	content: "\E012";
+}
+
+.base-icon-tooth6:before {
+	content: "\E013";
+}
+
+.base-icon-tooth7:before {
+	content: "\E014";
+}
+
+.base-icon-tooth8:before {
+	content: "\E015";
+}
+
+.base-icon-tooth9:before {
+	content: "\E016";
+}
+
+.base-icon-vk:before {
+	content: "\E017";
+}

@@ -1,0 +1,21 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Бережное отбеливание',
+      header_space = false,
+      footer = 'type2';
+
+block content
+  include include/_svg.pug
+  main.block-404.main-container
+    .container
+      .content
+        .h 404
+        .p Страница не найдена
+        img(src="images/404-bg.jpg")
+        a.button-style1.filled(href="#")
+          span Вернуться на главную
+      .image
+        img(src="images/404-bg.jpg")

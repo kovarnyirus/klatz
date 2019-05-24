@@ -1,0 +1,72 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Каталог',
+      header_space = true;
+
+block content
+  include include/_svg.pug
+  section.catalog-section.catalog-section1.main-row.clearfix
+    .container
+      .bg-text Lifestyle
+      .catalog-description
+        h2 Lifestyle
+        p Для активных людей,<br>следящих за своим здоровьем
+      .product-items.row
+        -
+          var array = [
+            {i: 'prod1', h: 'Бережное отбеливание', l: '#'},
+            {i: 'prod2', h: 'Свежее дыхание', l: '#'},
+            {i: 'prod3', h: 'Активная защита', l: '#'},
+          ]
+        each i in array
+          .col-6.col-md
+            .product-item(class=i.i)
+              .img
+                img(src="images/products/"+i.i+".png" alt=i.h)
+              .title= i.h
+              a(href=i.l)
+  section.catalog-section.catalog-section2.main-row.clearfix
+    .container
+      .bg-text Health
+      .catalog-description
+        h2 Health
+        p Для здоровья зубов и дёсен
+      .product-items.row
+        -
+          var array = [
+            {i: 'prod4', h: 'Здоровье дёсен', l: '#'},
+            {i: 'prod5', h: 'Целебные травы', l: '#'},
+            {i: 'prod6', h: 'Сенситив', l: '#'},
+          ]
+        each i in array
+          .col-6.col-md
+            .product-item(class=i.i)
+              .img
+                img(src="images/products/"+i.i+".png" alt=i.h)
+              .title= i.h
+              a(href=i.l)
+  section.catalog-section.catalog-section3.main-row.clearfix
+    .container
+      .bg-text Brutal Only
+      .row
+        .col-md-4
+          .catalog-description
+            h2 Brutal Only
+            p От оскала до улыбки.<br>Зубные пасты для мужчин
+        .col
+          .product-items.row
+            -
+              var array = [
+                {i: 'prod7', h: 'Дикий можжевельник', l: '#'},
+                {i: 'prod8', h: 'Супермята', l: '#'},
+              ]
+            each i in array
+              .col-6.col-md
+                .product-item(class=i.i)
+                  .img
+                    img(src="images/products/"+i.i+".png" alt=i.h)
+                  .title= i.h
+                  a(href=i.l)

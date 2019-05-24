@@ -1,0 +1,94 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Бережное отбеливание',
+      header_space = false;
+
+block content
+  include include/_svg.pug
+  main.main-container
+    .contacts-container
+      .container
+        .decor
+          div(data-parallax-coef="-0.3")
+          div(data-parallax-coef="0.4")
+          div(data-parallax-coef="-0.2")
+        .row
+          .col-md-6
+            .contact-row
+              .label.animate(data-animation="fadeInLeft") Для почты и официальных запросов
+              .p.animate(data-animation="fadeInLeft") 124489, Москва, Зеленоград,<br>проезд 4807, д. 1, стр. 1
+            .contact-row
+              .label.animate(data-animation="fadeInLeft" style="animation-delay: 300ms;") По вопросам сотрудничества
+              .p.animate(data-animation="fadeInLeft" style="animation-delay: 300ms;") Телефон/Факс: <a href="tel:+74957858344">+7 (495) 785-83-44</a><br>Электронная почта: <a href="mailto:info@cidg.ru">info@cidg.ru</a>
+            .write-block.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;")
+              .heading-block.with-line
+                h2.h Напишите нам
+              p С&nbsp;помощью этой формы вы&nbsp;можете оставить отзыв, задать вопрос или поделиться своими идеями относительно продукта.
+              p Если ваш отзыв касается ненадлежащего качества продукта, то&nbsp;нам понадобятся фотографии продукта и&nbsp;упаковки, в&nbsp;которой вы&nbsp;получили покупку.
+              p Сохраняйте фотографии, пока мы&nbsp;не&nbsp;свяжемся с&nbsp;вами, так как мы&nbsp;можем попросить предоставить их&nbsp;нам.
+    form.contact-form
+      .decor8
+      .container
+        .decor
+          div(data-parallax-coef="0.4")
+          div(data-parallax-coef="0")
+          div(data-parallax-coef="-0.2")
+          div(data-parallax-coef="0")
+          div(data-parallax-coef="-0.2")
+          div(data-parallax-coef="0.4")
+          div(data-parallax-coef="0")
+        .row
+          .col-lg-9.col-xl-8
+            .form-block.row
+              .input-col.col-12.animate(data-animation="fadeInLeft")
+                label Имя*
+                input.style1(placeholder="Имя")
+              .input-col.col-12.col-md-6.animate(data-animation="fadeInLeft")
+                label E-mail*
+                input.style1(placeholder="E-mail")
+              .input-col.col-12.col-md-6.animate(data-animation="fadeInLeft")
+                label Телефон
+                input.style1.error(placeholder="+7 ___ ___ __ __")
+              .input-col.col-12.col-select.animate(data-animation="fadeInLeft")
+                label Выберите тему
+                select.style1
+                  option(value="1") Оптовые закупки
+                  option(value="2") PR
+                  option(value="3") Отзыв
+              .input-col.col-12.col-md.col-fileuploader.animate(data-animation="fadeInLeft")
+                
+                .error-text(style="display: none;") Файл больше 5 МБ!
+
+                label Вы можете прикрепить фото весом до 5 МБ
+
+                <!-- Если ошибка добавляем класс error к upload-input -->
+                .upload-input
+                  label
+                    input(type="file")
+                    .input
+                      input.style1.input(placeholder="Выбрать файл...")
+                    span Обзор
+                .uploaded-files(style="display: none;")
+                  - n = 0;
+                  while n < 3
+                    - n++;
+                    a(href="#").item
+                      span.thumb(style="background-image: url(images/instagram.jpg)")
+                      span.delete Удалить
+                  a(href="#").item.plus
+                    i.base-icon-plus
+              .input-col.last.col-12.animate(data-animation="fadeInLeft")
+                label Сообщение*
+                textarea.style1(placeholder="Текст сообщения" rows="14")
+              .col-12.tar.animate(data-animation="fadeInLeft")
+                button.button-style1.filled(type="submit" disabled="")
+                  span Отправить
+    .popup-message
+      .close.base-icon-close
+      img(src="images/svg/check.svg")
+      .p Сообщение отправлено!
+      a(href="#").button-style1.filled
+        span Ok

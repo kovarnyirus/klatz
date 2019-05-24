@@ -1,0 +1,95 @@
+extends templates/layout.pug
+
+block vars
+  - 
+    var 
+      title = 'Бережное отбеливание',
+      header_space = true;
+
+block content
+  include include/_svg.pug
+  main.main-container
+    .container
+      .breadcrumbs.animate(data-animation="fadeInLeft")
+        a(href="#") Каталог
+        span.sep /
+        span Lifestyle «Бережное отбеливание»
+      .product-details-contianer.prod1.row
+        .col.col-md-6.animate(data-animation="fadeInLeft" style="animation-delay: 300ms;")
+          .product-images
+            .icon
+              img(src="images/prod_logo1.png", alt="Бережное отбеливание")
+            .pi-slider
+              .swiper-container
+                .pagination
+                .swiper-wrapper
+                  -
+                    var array = [
+                      {i: 'images/product-details/prod1.jpg'},
+                      {i: 'images/product-details/prod1-2.jpg'},
+                      {i: 'images/product-details/prod1-3.jpg'},
+                    ]
+                  each i in array
+                    .swiper-slide
+                      img(src=i.i, alt="Prod")
+            .pi-thumbs
+              .prev
+                svg
+                  use(xlink:href="#prev")
+              .next
+                svg
+                  use(xlink:href="#next")
+              .swiper-container
+                .swiper-wrapper
+                  each i in array
+                    .swiper-slide
+                      img(src=i.i, alt="Prod")
+        .col.col-md-6
+          .detail-block
+            .cat.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;") Lifestyle
+            h3.h.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;") Бережное отбеливание
+            .weight.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;") 75 мл
+            .icon.animate(data-animation="zoomIn" style="animation-delay: 700ms;")
+              img(src="images/prod_logo1.png", alt="Бережное отбеливание")
+          .tabs-block
+            .tabs-head.swiper-container.animate(data-animation="fadeInLeft" style="animation-delay: 700ms;")
+              .swiper-wrapper
+                .swiper-slide Описание
+                .swiper-slide Состав
+            .tabs-body.swiper-container.animate(data-animation="fadeInLeft" style="animation-delay: 1000ms;")
+              .swiper-wrapper
+                .swiper-slide
+                  p Универсальная зубная паста для ежедневного использования. Безопасный отбеливающий комплекс с растительным ферментом Papain расщепляет белковую основу окрашенного налета и удаляет его, обеспечивает безопасную высокоэффективную очистку зубной эмали, восстанавливая естественную белизну зубов. Ионы фтора увеличивают устойчивость зубной эмали к воздействию кислот, способствуют её реминерализации. Ионы цинка и активные компоненты солодки контролируют образование бактериального налёта, способствуют сохранению ощущения свежести во рту.
+                .swiper-slide
+                  p Вода, диоксид кремния, глицерин, пропиленгликоль, ксилит, целлюлозная камедь, натрия лаурил сульфат, ароматизатор, натрия лауроил саркозинат, диоксид титана, папаин, цинка лактат, натрий фтористый (1400 ррм), экстракт солодки, поливинилпирролидон, натрия сахаринат, метилпарабен, масло парфюмерное, ментол.
+      .product-icon-box.row
+        -
+          var array = [
+            {i: 'base-icon-tooth2', h: 'Реминерализация эмали'},
+            {i: 'base-icon-tooth3', h: 'Удаляет налёт'},
+            {i: 'base-icon-tooth4', h: 'Свежее дыхание'},
+            {i: 'base-icon-tooth6', h: 'Отбеливающий эффект'},
+          ]
+        each i, index in array
+          .col-6.col-md-3.animate(data-animation="fadeIn" style="animation-delay: "+index*300+"ms;")
+            i(class=i.i)
+            .title= i.h
+    section.related-products-section.main-row.clearfix
+      .container
+        .heading-block.with-line.tac.animate(data-animation="fadeInUp")
+          h2.h Смотрите также
+        .product-items.row
+          -
+            var array = [
+              {i: 'prod1', h: 'Бережное отбеливание', l: '#'},
+              {i: 'prod2', h: 'Свежее дыхание', l: '#'},
+              {i: 'prod3', h: 'Активная защита', l: '#'},
+            ]
+          each i, index in array
+            .col-6.col-md-4.animate(data-animation="fadeIn" style="animation-delay: "+index*300+"ms;")
+              .product-item(class=i.i)
+                .img
+                  img(src="images/products/"+i.i+".png" alt=i.h)
+                .title= i.h
+                a(href=i.l)
+        

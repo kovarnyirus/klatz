@@ -1,0 +1,162 @@
+include ../mixins/_navigation.pug
+
+//- nav.navigation
+     +navigation('home')
+    .nav-butter.visible_menu
+      span
+      span
+      span
+
+//- Variables
+
+block vars
+
+- 
+  var 
+    body_class = color_scheme
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    title= title
+    meta(name="description" content="")
+    meta(property="og:image" content="#")
+
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(name="theme-color" content="#000")
+    link(rel="icon" href="images/favicon.ico")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800&amp;subset=cyrillic|Playfair+Display:900&amp;subset=cyrillic")
+    link(rel="stylesheet" href="css/select2.css")
+    link(rel="stylesheet" href="css/swiper.css")
+    link(rel="stylesheet" href="css/animate.css")
+    link(rel="stylesheet" href="css/iconfont.css")
+    link(rel="stylesheet" href="css/main.css")
+
+  body(class=body_class)
+    #page
+      //- Site Header
+      block header
+        .site-header
+          .container
+            .row
+              .col.col-md-5
+                .site-logo
+                  a(href="/")
+                    img(src="images/logo.svg", alt="Klatz")
+                    span Профессиональные<br>зубные пасты
+              .navigation-col.col-md-5
+                nav.navigation
+                  +navigation('home')
+              .right.col
+                .nav-butter
+                  span
+                  span
+                  span
+                .social-links
+                  a(href="#")
+                    i.base-icon-vk
+                  a(href="#")
+                    i.base-icon-fb
+                  a(href="#")
+                    i.base-icon-ig
+                .lang-switch
+                  a(href="#").current Рус
+                  a(href="#") Eng
+        .mobile-header
+          .top
+            .l Меню 
+            .close.base-icon-close
+          .wrap
+            nav.mobile-navigation
+              +navigation('home')
+            .social-links
+              a(href="#")
+                i.base-icon-vk
+              a(href="#")
+                i.base-icon-fb
+              a(href="#")
+                i.base-icon-ig
+            .lang-switch
+              a(href="#").current Рус
+              a(href="#") Eng
+        if header_space
+          .header-space
+      //- END Site Header
+
+      //- Body Content
+      block content
+      //- END Body Content
+
+      //- Site Footer
+      block footer
+        footer.site-footer(class=footer)
+          .container
+            if footer == 'type2'
+              .row
+                .flex-col.col-12.col-md-4
+                  .copyright © 2018 Klatz
+                  .company Компания<br>ООО «Си Ай Ди Групп»
+                .col-6.col-md-4
+                  .contact-row
+                    .label Для почты и официальных запросов
+                    .p 124489, Москва, Зеленоград,<br>проезд 4807, д. 1, стр. 1
+                .col-6.h-col
+                  .contact-row
+                    .label По вопросам сотрудничества
+                    .p <span>Телефон/Факс:</span> <a href="tel:+74957858344">+7 (495) 785-83-44</a><br><span>Электронная почта:</span> <a href="mailto:info@cidg.ru">info@cidg.ru</a>
+                .col-12.col-md-4
+                  .contact-row
+                    .label По вопросам сотрудничества
+                    .p Телефон/Факс: <a href="tel:+74957858344">+7 (495) 785-83-44</a><br>Электронная почта: <a href="mailto:info@cidg.ru">info@cidg.ru</a>
+            else
+              .row
+                .flex-col.col-12.col-md-3
+                  .copyright © 2018 Klatz
+                  .company Компания<br>ООО&nbsp;«Си&nbsp;Ай&nbsp;Ди Групп»
+                .col-12.col-md-4
+                  .row
+                    .contact-row.col-6.col-md-12
+                      .label Для почты и официальных запросов
+                      .p 124489, Москва, Зеленоград,<br>проезд 4807, д. 1, стр. 1
+                    .contact-row.col-6.col-md-12
+                      .label По вопросам сотрудничества
+                      .p <span>Телефон/Факс:</span> <a href="tel:+74957858344">+7 (495) 785-83-44</a><br><span>Электронная почта:</span> <a href="mailto:info@cidg.ru">info@cidg.ru</a>
+                .col-12.col-md-2
+                  ul.footer-menu
+                    li
+                      a(href="#") О Klatz
+                    li.menu-item-has-children
+                      a(href="#") Коллекции
+                      ul
+                        li
+                          a(href="#") Lifestyle
+                        li
+                          a(href="#") Health
+                        li
+                          a(href="#") Brutal Only
+                    li
+                      a(href="#") Контакты
+                .flex-col.col-12.col-md-3
+                  .button-block
+                    a(href="#").button-style1.feedback-button
+                      span Напишите нам
+                  .social-links
+                    a(href="#")
+                      i.base-icon-vk
+                    a(href="#")
+                      i.base-icon-fb
+                    a(href="#")
+                      i.base-icon-ig
+
+      //- END Site Footer
+
+      block scripts
+        script(src="https://code.jquery.com/jquery-2.2.4.min.js")
+        script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA5bpEs3xlB8vhxNFErwoo3MXR64uavf6Y&sensor=false&ver=5.0.3")
+        script(src="js/parallax.min.js")
+        script(src="js/select2.min.js")
+        script(src="js/swiper.min.js")
+        script(src="js/scripts.js")
