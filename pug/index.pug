@@ -1,181 +1,200 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
-      title = 'Главная';
+    -
+        var
+        title = 'Главная';
 
 block content
-  include include/_svg.pug
-  section.first-screen.main-row.clearfix(data-parallax="scroll" data-image-src="images/bg1.jpg" data-speed=".6" data-position-x="right")
-    .decor
-      div
-      div
-      div
-      div
-      div
-      div
-      div
-    .container
-      h1.h Улыбайся <br>чаще!
-      p Профессиональный<br>уход за зубами
-  section.main-row.clearfix
-    .container
-      .num-box-items.row
-        -
-          var array = [
-            {n: '3', h: 'линейки', d:'для любых<br>потребностей в уходе<br>за полостью рта'},
-            {n: '10', h: 'зубных паст', d:'для профилактики<br>кариеса<br>и здоровья дёсен'},
-            {n: '11', h: 'активных компонентов', d:'в составе<br>уникальных инновационных<br>формул'},
-          ]
-        each i, index in array
-          .col-12.col-lg-4
-            .num-box.animate(data-animation="fadeInUp" style="animation-delay: "+index*300+"ms")
-              .num= i.n
-              .h= i.h
-              .desc!= i.d
-      .product-about-block
-        .row
-          .col-12.col-lg-5
-            .img
-              .decor
-                div(data-parallax-coef="0.2")
-                div(data-parallax-coef="-0.2")
-                div(data-parallax-coef="-0.2")
-                div
-                div(data-parallax-coef="0.2")
-              img(src="images/prod-side.png" alt="KLATZ")
-          .col-12.col-lg-7
-            .heading-block.with-line
-              h2.h Блестящий <br>результат
-            .text
-              p Klatz&nbsp;&mdash; это зубные пасты различного направления, активные компоненты которых обеспечивают профилактику заболеваний полости рта, удаляют налёт и&nbsp;дарят свежее дыхание. Благодаря качественному составу, современным технологиям и&nbsp;специальным рецептурам Klatz гарантирует эффективную гигиену и&nbsp;бережный уход каждый день.
-              p Регулярное использование Klatz делает эмаль идеально гладкой и&nbsp;сводит к&nbsp;минимуму риск образования зубного налета. Паста обеспечивает профилактику кариеса, болезней десен и&nbsp;поддерживает длительный освежающий эффект.
-      .components-block
-        .row
-          .col-12.col-lg-7.animate(data-animation="fadeInLeft")
-            .heading-block.with-line
-              h2.h Инновационные <br>формулы
-          .col-6.col-lg-5.animate(data-animation="fadeInRight")
-            .component-item.component-item1
-              .img
-                img(src="images/p-part1.png" alt="Диоксид кремния")
-              .wrap
-                h3.h Диоксид кремния
-                p Тщательно очищает налёт <br>без повреждения эмали зубов
-          .col-6.col-lg-4.animate(data-animation="fadeInLeft")
-            .component-item.component-item2
-              .img
-                img(src="images/p-part2.png" alt="Цитрат кальция")
-              .wrap
-                h3.h Цитрат кальция
-                p Восстанавливает <br>прочность зубов за счёт реминерализации эмали
-          .col-6.col-lg-4.animate(data-animation="fadeInUp")
-            .component-item.component-item3
-              .img
-                img(src="images/p-part3.png" alt="Ионы фтора")
-              .wrap
-                h3.h Ионы фтора
-                p Укрепляют эмаль <br>и нейтрализуют <br>болезнетворные бактерии
-          .col-6.col-lg-4.animate(data-animation="fadeInRight")
-            .component-item.component-item4
-              .img
-                img(src="images/p-part4.png" alt="Лактат цинка")
-              .wrap
-                h3.h Лактат цинка
-                p Обеспечивает <br>профилактику галитоза <br>и уход за дёснами
-          .col-12.animate(data-animation="fadeInUp")
-            .component-item.component-item5
-              .img
-                img(src="images/p-part5.jpg" alt="Растительные экстракты")
-              .wrap
-                h3.h Растительные<br>экстракты
-                p Защищают поверхность <br>зубов от разрущающего <br>действия бактерий
-  section.product-block.product-block1.main-row.clearfix(data-parallax="scroll" data-image-src="images/bg2.png" data-speed=".6" data-position-x="right" data-z-index="2")
-    .bg-text Lifestyle
-    .decor
-      div
-      div
-      div
-      div
-    .container
-      .row
-        .col-lg-6
-          .product-block-content
-            .sub-h линейка
-            h2.h Lifestyle
-            p Для активных людей, <br>следящих за своим здоровьем
-            a.button-style1(href="#")
-              span Смотреть в каталоге
-            a.link(href="#")
-  section.product-block.product-block2.main-row.clearfix(data-parallax="scroll" data-image-src="images/bg3.png" data-speed=".6" data-position-x="left" data-z-index="2")
-    .bg-text Health
-    .decor
-      div
-      div
-      div
-      div
-    .container
-      .row
-        .col-lg-6.offset-lg-6
-          .product-block-content
-            .sub-h линейка
-            h2.h Health
-            p Для здоровья зубов и дёсен
-            a.button-style1(href="#")
-              span Смотреть в каталоге
-            a.link(href="#")
-  section.product-block.product-block3.main-row.clearfix(data-parallax="scroll" data-image-src="images/bg4.jpg" data-speed=".6" data-position-x="right")
-    .bg-text Brutal<br>Only
-    .decor
-      div
-      div
-    .container
-      .row
-        .col-lg-6
-          .product-block-content
-            .sub-h линейка
-            h2.h Brutal Only
-            p От оскала до улыбки.<br>Зубные пасты для мужчин
-            a.button-style1(href="#")
-              span Смотреть в каталоге
-            a.link(href="#")
-  section.instagram-section.main-row.clearfix
-    .container
-      .instagam-link.animate(data-animation="fadeInUp")
-        a(href="#")
-          i.fab.fa-instagram
-          span klatz_official
-      .instagram-carousel.animate(data-animation="fadeInUp")
-        .prev
-          svg
-            use(xlink:href="#prev")
-        .next
-          svg
-            use(xlink:href="#next")
-        .swiper-container
-          .swiper-wrapper
-            - n = 0;
-            while n < 10
-              - n++;
-              .swiper-slide
-                a(href="#" style="background-image: url(images/instagram.jpg)")
-  section.how-to-buy.main-row.clearfix.animate(data-animation="fadeInLeft")
-    .container
-      .heading-block.with-line.tac
-        h2.h Где купить
-      .brand-carousel
-        .prev
-          svg
-            use(xlink:href="#prev")
-        .next
-          svg
-            use(xlink:href="#next")
-        .swiper-container
-          .swiper-wrapper
-            - n = 0;
-            while n < 4
-              - n++;
-              .swiper-slide
+    include include/_svg.pug
+    section.first-screen.main-row.clearfix(data-parallax="scroll" data-image-src="images/bg1.jpg" data-speed=".6" data-position-x="right")
+        .decor
+            div
+            div
+            div
+            div
+            div
+            div
+            div
+        .container
+            h1.h Улыбайся <br>чаще!
+            p Профессиональный<br>уход за зубами
+    section.main-row.clearfix
+        .container
+            .num-box-items.row
+                -
+                    var array = [
+                    {n: '3', h: 'линейки', d:'для любых<br>потребностей в уходе<br>за полостью рта'},
+                    {n: '10', h: 'зубных паст', d:'для профилактики<br>кариеса<br>и здоровья дёсен'},
+                    {n: '11', h: 'активных компонентов', d:'в составе<br>уникальных инновационных<br>формул'},
+                    ]
+                each i, index in array
+                    .col-12.col-lg-4
+                        .num-box.animate(data-animation="fadeInUp" style="animation-delay: " + index * 300 + "ms")
+                            .num= i.n
+                            .h= i.h
+                            .desc!= i.d
+            .product-about-block
+                .row
+                    .col-12.col-lg-5
+                        .img
+                            .decor
+                                div(data-parallax-coef="0.2")
+                                div(data-parallax-coef="-0.2")
+                                div(data-parallax-coef="-0.2")
+                                div
+                                div(data-parallax-coef="0.2")
+                            picture
+                                source(type='image/webp', srcset='images/prod-side.webp')
+                                img(src="images/prod-side.png" alt="KLATZ")
+                    .col-12.col-lg-7
+                        .heading-block.with-line
+                            h2.h Блестящий <br>результат
+                        .text
+                            p Klatz&nbsp;&mdash; это зубные пасты различного направления, активные компоненты которых обеспечивают профилактику заболеваний полости рта, удаляют налёт и&nbsp;дарят свежее дыхание. Благодаря качественному составу, современным технологиям и&nbsp;специальным рецептурам Klatz гарантирует эффективную гигиену и&nbsp;бережный уход каждый день.
+                            p Регулярное использование Klatz делает эмаль идеально гладкой и&nbsp;сводит к&nbsp;минимуму риск образования зубного налета. Паста обеспечивает профилактику кариеса, болезней десен и&nbsp;поддерживает длительный освежающий эффект.
+            .components-block
+                .row
+                    .col-12.col-lg-7.animate(data-animation="fadeInLeft")
+                        .heading-block.with-line
+                            h2.h Инновационные <br>формулы
+                    .col-6.col-lg-5.animate(data-animation="fadeInRight")
+                        .component-item.component-item1
+                            .img
+                                picture
+                                    source(type='image/webp', srcset='images/p-part1.webp')
+                                    img(src="images/p-part1.png" alt="Диоксид кремния")
+                            .wrap
+                                h3.h Диоксид кремния
+                                p Тщательно очищает налёт <br>без повреждения эмали зубов
+                    .col-6.col-lg-4.animate(data-animation="fadeInLeft")
+                        .component-item.component-item2
+                            .img
+                                 picture
+                                    source(type='image/webp', srcset='images/p-part2.webp')
+                                    img(src="images/p-part2.png" alt="Цитрат кальция")
+
+                            .wrap
+                                h3.h Цитрат кальция
+                                p Восстанавливает <br>прочность зубов за счёт реминерализации эмали
+                    .col-6.col-lg-4.animate(data-animation="fadeInUp")
+                        .component-item.component-item3
+                            .img
+                                 picture
+                                    source(type='image/webp', srcset='images/p-part3.webp')
+                                    img(src="images/p-part3.png" alt="Ионы фтора")
+
+                            .wrap
+                                h3.h Ионы фтора
+                                p Укрепляют эмаль <br>и нейтрализуют <br>болезнетворные бактерии
+                    .col-6.col-lg-4.animate(data-animation="fadeInRight")
+                        .component-item.component-item4
+                            .img
+                                 picture
+                                    source(type='image/webp', srcset='images/p-part4.webp')
+                                    img(src="images/p-part4.png" alt="Лактат цинка")
+
+                            .wrap
+                                h3.h Лактат цинка
+                                p Обеспечивает <br>профилактику галитоза <br>и уход за дёснами
+                    .col-12.animate(data-animation="fadeInUp")
+                        .component-item.component-item5
+                            .img
+                                picture
+                                    source(type='image/webp', srcset='images/p-part5.webp')
+                                    img(src="images/p-part5.jpg" alt="Растительные экстракты")
+
+                            .wrap
+                                h3.h Растительные<br>экстракты
+                                p Защищают поверхность <br>зубов от разрущающего <br>действия бактерий
+    section.product-block.product-block1.main-row.clearfix(data-parallax="scroll" data-image-src="images/bg2.png" data-speed=".6" data-position-x="right" data-z-index="2")
+        .bg-text Lifestyle
+        .decor
+            div
+            div
+            div
+            div
+        .container
+            .row
+                .col-lg-6
+                    .product-block-content
+                        .sub-h линейка
+                        h2.h Lifestyle
+                        p Для активных людей, <br>следящих за своим здоровьем
+                        a.button-style1(href="#")
+                            span Смотреть в каталоге
+                        a.link(href="#")
+    section.product-block.product-block2.main-row.clearfix(data-parallax="scroll" data-image-src="images/bg3.png" data-speed=".6" data-position-x="left" data-z-index="2")
+        .bg-text Health
+        .decor
+            div
+            div
+            div
+            div
+        .container
+            .row
+                .col-lg-6.offset-lg-6
+                    .product-block-content
+                        .sub-h линейка
+                        h2.h Health
+                        p Для здоровья зубов и дёсен
+                        a.button-style1(href="#")
+                            span Смотреть в каталоге
+                        a.link(href="#")
+    section.product-block.product-block3.main-row.clearfix(data-parallax="scroll" data-image-src="images/bg4.jpg" data-speed=".6" data-position-x="right")
+        .bg-text Brutal<br>Only
+        .decor
+            div
+            div
+        .container
+            .row
+                .col-lg-6
+                    .product-block-content
+                        .sub-h линейка
+                        h2.h Brutal Only
+                        p От оскала до улыбки.<br>Зубные пасты для мужчин
+                        a.button-style1(href="#")
+                            span Смотреть в каталоге
+                        a.link(href="#")
+    section.instagram-section.main-row.clearfix
+        .container
+            .instagam-link.animate(data-animation="fadeInUp")
                 a(href="#")
-                  img(src="images/brand"+n+".png") 
+                    i.fab.fa-instagram
+                    span klatz_official
+            .instagram-carousel.animate(data-animation="fadeInUp")
+                .prev
+                    svg
+                        use(xlink:href="#prev")
+                .next
+                    svg
+                        use(xlink:href="#next")
+                .swiper-container
+                    .swiper-wrapper
+                        - n = 0;
+                        while n < 10
+                            - n++;
+                            .swiper-slide
+                                a(href="#" style="background-image: url(images/instagram.jpg)")
+    section.how-to-buy.main-row.clearfix.animate(data-animation="fadeInLeft")
+        .container
+            .heading-block.with-line.tac
+                h2.h Где купить
+            .brand-carousel
+                .prev
+                    svg
+                        use(xlink:href="#prev")
+                .next
+                    svg
+                        use(xlink:href="#next")
+                .swiper-container
+                    .swiper-wrapper
+                        - n = 0;
+                        while n < 4
+                            - n++;
+                            .swiper-slide
+                                a(href="#")
+                                    picture
+                                        source(type='image/webp', srcset="images/brand" + n + ".webp")
+                                        img(src="images/brand" + n + ".png")
+
