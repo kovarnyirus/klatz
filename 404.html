@@ -131,9 +131,16 @@
         <div class="container">
           <div class="content">
             <div class="h">404</div>
-            <div class="p">Страница не найдена</div><img src="images/404-bg.jpg"><a class="button-style1 filled" href="#"><span>Вернуться на главную</span></a>
+            <div class="p">Страница не найдена</div>
+            <picture>
+              <source type="image/webp" srcset="images/404-bg.webp 1x, images/404-bg@2x.webp 2x"><img src="images/404-bg.jpg" srcset="images/404-bg@2x.jpg 2x" alt="404">
+            </picture><a class="button-style1 filled" href="#"><span>Вернуться на главную</span></a>
           </div>
-          <div class="image"><img src="images/404-bg.jpg"></div>
+          <div class="image">
+            <picture>
+              <source type="image/webp" srcset="images/404-bg.webp 1x, images/404-bg@2x.webp 2x"><img src="images/404-bg.jpg" srcset="images/404-bg@2x.jpg 2x" alt="404">
+            </picture>
+          </div>
         </div>
       </main>
       <footer class="site-footer type2">

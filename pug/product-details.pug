@@ -1,8 +1,8 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  -
+    var
       title = 'Бережное отбеливание',
       header_space = true;
 
@@ -18,7 +18,10 @@ block content
         .col.col-md-6.animate(data-animation="fadeInLeft" style="animation-delay: 300ms;")
           .product-images
             .icon
-              img(src="images/prod_logo1.png", alt="Бережное отбеливание")
+              picture
+                source(type='image/webp', srcset='images/prod_logo1.webp 1x, images/prod_logo1@2x.webp 2x')
+                img(src="images/prod_logo1.png" srcset="images/prod_logo1@2x.png 2x" alt="Бережное отбеливание")
+
             .pi-slider
               .swiper-container
                 .pagination
@@ -50,7 +53,9 @@ block content
             h3.h.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;") Бережное отбеливание
             .weight.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;") 75 мл
             .icon.animate(data-animation="zoomIn" style="animation-delay: 700ms;")
-              img(src="images/prod_logo1.png", alt="Бережное отбеливание")
+              picture
+                source(type='image/webp', srcset='images/prod_logo1.webp 1x, images/prod_logo1@2x.webp 2x')
+                img(src="images/prod_logo1.png" srcset="images/prod_logo1@2x.png 2x" alt="Бережное отбеливание")
           .tabs-block
             .tabs-head.swiper-container.animate(data-animation="fadeInLeft" style="animation-delay: 700ms;")
               .swiper-wrapper
@@ -92,4 +97,4 @@ block content
                   img(src="images/products/"+i.i+".png" alt=i.h)
                 .title= i.h
                 a(href=i.l)
-        
+

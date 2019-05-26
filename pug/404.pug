@@ -1,8 +1,8 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  -
+    var
       title = 'Бережное отбеливание',
       header_space = false,
       footer = 'type2';
@@ -14,8 +14,12 @@ block content
       .content
         .h 404
         .p Страница не найдена
-        img(src="images/404-bg.jpg")
+        picture
+          source(type='image/webp', srcset='images/404-bg.webp 1x, images/404-bg@2x.webp 2x')
+          img(src="images/404-bg.jpg" srcset="images/404-bg@2x.jpg 2x" alt="404")
         a.button-style1.filled(href="#")
           span Вернуться на главную
       .image
-        img(src="images/404-bg.jpg")
+        picture
+          source(type='image/webp', srcset='images/404-bg.webp 1x, images/404-bg@2x.webp 2x')
+          img(src="images/404-bg.jpg" srcset="images/404-bg@2x.jpg 2x" alt="404")
