@@ -253,10 +253,17 @@ jQuery(document).ready(function () {
     });
 });
 
+
+const FILE_TYPES = ['jpg', 'jpeg', 'png'];
+const INPUT_FILE_ADD = document.querySelector('.upload-input');
+// const ERROR_MESSAGE = document.querySelector('.error-text');
+const FILE_FIZE_MSG = document.querySelector('.file-size');
+const MAX_SIZE_IMG = 5242880;
 let loadFile;
 let previewImage;
 var fileField = document.querySelector('.select-file-wrap');
 var preview = document.querySelector('.uploaded-files');
+
 
 function pastInput() {
     previewImage.appendChild(loadFile);
@@ -265,18 +272,43 @@ function pastInput() {
 
 function removeFile(event) {
     event.explicitOriginalTarget.parentElement.remove()
+};
+
+function showErr(msg) {
+    INPUT_FILE_ADD.classList.add('error');
+    FILE_FIZE_MSG.innerHTML = msg;
+    FILE_FIZE_MSG.classList.add('error-text');
 }
 
-function onchangeInputFile(event) {
+function checkFileType(file, types) {
+    for (let i = 0; i < types.length; i++) {
+        if (file.toLowerCase() === types[i].toLowerCase()){
+            return true
+        }
+    }
+}
+
+function onChangeInputFile(evt) {
     var reader = new FileReader();
     var link = document.createElement('a');
     var img = document.createElement('img');
     var del = document.createElement('span');
     var deleteText = document.createTextNode('Удалить');
+    let fileSize = evt.target.files[0].size;
+    let fileNameArr = evt.target.files[0].name.split('.').pop();
+
+    if ( fileSize > MAX_SIZE_IMG) {
+        showErr('Файл более 5 МБ');
+        return;
+    } else if (!checkFileType(fileNameArr, FILE_TYPES)) {
+        showErr('Не верный формат файла');
+        return;
+    }
 
     reader.onload = function (event) {
+
+
         link.setAttribute('class', 'item');
-        link.setAttribute('src', event.target.result);
 
         img.setAttribute('class', 'thumb');
         img.setAttribute('src', event.target.result);
@@ -292,14 +324,15 @@ function onchangeInputFile(event) {
         pastInput();
         preview.style.display = 'flex';
     };
-    reader.readAsDataURL(event.target.files[0]);
+
+    reader.readAsDataURL(evt.target.files[0]);
 }
 
 function createInputTypeFile() {
     let input = document.createElement('input');
     input.style = 'display: none';
     input.setAttribute('type', 'file');
-    input.addEventListener('change', onchangeInputFile);
+    input.addEventListener('change', onChangeInputFile);
     input.click();
     loadFile = input;
 }

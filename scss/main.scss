@@ -2755,6 +2755,7 @@ textarea.style1 {
   &.error {
 
     input.style1,
+    & .select-file,
     span {
       border-color: #B5002E;
     }

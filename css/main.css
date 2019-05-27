@@ -8092,6 +8092,7 @@ textarea.style1 {
 }
 
 .upload-input.error input.style1,
+.upload-input.error .select-file,
 .upload-input.error span {
   border-color: #B5002E;
 }
