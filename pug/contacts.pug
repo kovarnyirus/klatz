@@ -1,8 +1,8 @@
 extends templates/layout.pug
 
 block vars
-  - 
-    var 
+  -
+    var
       title = 'Бережное отбеливание',
       header_space = false;
 
@@ -59,27 +59,30 @@ block content
                   option(value="2") PR
                   option(value="3") Отзыв
               .input-col.col-12.col-md.col-fileuploader.animate(data-animation="fadeInLeft")
-                
+
                 .error-text(style="display: none;") Файл больше 5 МБ!
 
                 label Вы можете прикрепить фото весом до 5 МБ
 
                 <!-- Если ошибка добавляем класс error к upload-input -->
                 .upload-input
-                  label
-                    input(type="file")
-                    .input
-                      input.style1.input(placeholder="Выбрать файл...")
-                    span Обзор
+                  .select-file-wrap
+                    .select-file Выбрать файл...
+                    span.select-file__brows Обзор
+                  //label
+                  //  input(type="file" id="files" name="files")
+                  //  .input
+                  //    input.style1.input(placeholder="Выбрать файл...")
+                  //  span Обзор
                 .uploaded-files(style="display: none;")
-                  - n = 0;
-                  while n < 3
-                    - n++;
-                    a(href="#").item
-                      span.thumb(style="background-image: url(images/instagram.jpg)")
-                      span.delete Удалить
-                  a(href="#").item.plus
-                    i.base-icon-plus
+                  // - n = 0;
+                  // while n < 3
+                  //   - n++;
+                  //   a(href="#").item
+                  //     span.thumb(style="background-image: url(images/instagram.jpg)")
+                  //     span.delete Удалить
+                  // a(href="#").item.plus
+                  //   i.base-icon-plus
               .input-col.last.col-12.animate(data-animation="fadeInLeft")
                 label Сообщение*
                 textarea.style1(placeholder="Текст сообщения" rows="14")

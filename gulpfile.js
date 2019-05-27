@@ -32,7 +32,7 @@ var gulp = require('gulp'),
 
 gulp.task('browser-sync', function () {
     browserSync({
-        proxy: 'klatz.pro',
+        server: "./",
         notify: false,
     })
 });
@@ -100,19 +100,19 @@ gulp.task('imagemin', function () {
         .pipe(gulp.dest('images'))
 });
 
-gulp.task('bp', function () {
-    var date = new Date();
-    date = date.getFullYear() + '-' +
-        parseInt(date.getMonth() + 1) + '-' +
-        date.getDate() + '-' +
-        (date.getHours()) + '-' +
-        date.getMinutes();
-
-    return gulp.src(['**', plugin_dir + '/**'], {
-        base: './'
-    })
-        .pipe(gulp.dest('backup/v-' + date));
-});
+// gulp.task('bp', function () {
+//     var date = new Date();
+//     date = date.getFullYear() + '-' +
+//         parseInt(date.getMonth() + 1) + '-' +
+//         date.getDate() + '-' +
+//         (date.getHours()) + '-' +
+//         date.getMinutes();
+//
+//     return gulp.src(['**', plugin_dir + '/**'], {
+//         base: './'
+//     })
+//         .pipe(gulp.dest('backup/v-' + date));
+// });
 
 gulp.task("webp", function() {
     return gulp.src("images/**/*.{png,jpg}")

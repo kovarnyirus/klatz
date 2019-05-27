@@ -2652,7 +2652,7 @@ body {
   color: #B5002E;
   margin-bottom: 15px;
 }
-
+.select-file,
 input.style1,
 textarea.style1,
 select.style1,
@@ -2719,7 +2719,8 @@ textarea.style1 {
     flex: 1 0 0;
   }
 
-  input.style1 {
+  input.style1,
+  .select-file{
     pointer-events: none;
     border-right: none;
     border-radius: 8px 0px 0px 8px;
@@ -2766,6 +2767,33 @@ textarea.style1 {
         background: #B5002E;
         color: #fff;
       }
+    }
+  }
+
+  & .select-file-wrap{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .select-file{
+    color: rgba(0, 0, 0, 0.16);
+  }
+
+  & .select-file__brows{
+    @extend %transition;
+    display: flex;
+    background: #EFEFF4;
+    border: 1px solid #D1D1D1;
+    border-radius: 0px 8px 8px 0px;
+    font-size: 18px;
+    width: 159px;
+    min-width: 159px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background: #D1D1D1;
     }
   }
 }
@@ -2941,6 +2969,7 @@ textarea.style1 {
       @extend %cover;
       display: block;
       height: 100%;
+      cursor: pointer;
     }
 
     .delete {

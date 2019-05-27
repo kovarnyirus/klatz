@@ -4391,7 +4391,7 @@ html {
 .instagram-carousel .prev,
 .instagram-carousel .next, .brand-carousel .prev,
 .brand-carousel .next, .pi-thumbs .prev,
-.pi-thumbs .next, a, .upload-input label span, .popup-message .close {
+.pi-thumbs .next, a, .upload-input label span, .upload-input .select-file__brows, .popup-message .close {
   -webkit-transition: 300ms ease;
   -o-transition: 300ms ease;
   transition: 300ms ease;
@@ -7898,6 +7898,7 @@ body {
   margin-bottom: 15px;
 }
 
+.select-file,
 input.style1,
 textarea.style1,
 select.style1,
@@ -7919,6 +7920,7 @@ select.style1,
   width: 100%;
 }
 
+.select-file::-webkit-input-placeholder,
 input.style1::-webkit-input-placeholder,
 textarea.style1::-webkit-input-placeholder,
 select.style1::-webkit-input-placeholder,
@@ -7926,6 +7928,7 @@ select.style1::-webkit-input-placeholder,
   color: #D1D1D1;
 }
 
+.select-file:-ms-input-placeholder,
 input.style1:-ms-input-placeholder,
 textarea.style1:-ms-input-placeholder,
 select.style1:-ms-input-placeholder,
@@ -7933,6 +7936,7 @@ select.style1:-ms-input-placeholder,
   color: #D1D1D1;
 }
 
+.select-file::-ms-input-placeholder,
 input.style1::-ms-input-placeholder,
 textarea.style1::-ms-input-placeholder,
 select.style1::-ms-input-placeholder,
@@ -7940,6 +7944,7 @@ select.style1::-ms-input-placeholder,
   color: #D1D1D1;
 }
 
+.select-file::placeholder,
 input.style1::placeholder,
 textarea.style1::placeholder,
 select.style1::placeholder,
@@ -7947,7 +7952,9 @@ select.style1::placeholder,
   color: #D1D1D1;
 }
 
-input.style1:focus, input.style1.error,
+.select-file:focus, .select-file.error,
+input.style1:focus,
+input.style1.error,
 textarea.style1:focus,
 textarea.style1.error,
 select.style1:focus,
@@ -7959,6 +7966,7 @@ select.style1.error,
           box-shadow: 0px 5px 11px rgba(0, 123, 255, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.06);
 }
 
+.select-file.error,
 input.style1.error,
 textarea.style1.error,
 select.style1.error,
@@ -7967,6 +7975,7 @@ select.style1.error,
   color: #B5002E;
 }
 
+.select-file.error::-webkit-input-placeholder,
 input.style1.error::-webkit-input-placeholder,
 textarea.style1.error::-webkit-input-placeholder,
 select.style1.error::-webkit-input-placeholder,
@@ -7974,6 +7983,7 @@ select.style1.error::-webkit-input-placeholder,
   color: inherit;
 }
 
+.select-file.error:-ms-input-placeholder,
 input.style1.error:-ms-input-placeholder,
 textarea.style1.error:-ms-input-placeholder,
 select.style1.error:-ms-input-placeholder,
@@ -7981,6 +7991,7 @@ select.style1.error:-ms-input-placeholder,
   color: inherit;
 }
 
+.select-file.error::-ms-input-placeholder,
 input.style1.error::-ms-input-placeholder,
 textarea.style1.error::-ms-input-placeholder,
 select.style1.error::-ms-input-placeholder,
@@ -7988,6 +7999,7 @@ select.style1.error::-ms-input-placeholder,
   color: inherit;
 }
 
+.select-file.error::placeholder,
 input.style1.error::placeholder,
 textarea.style1.error::placeholder,
 select.style1.error::placeholder,
@@ -7996,6 +8008,7 @@ select.style1.error::placeholder,
 }
 
 @media (max-width: 767.98px) {
+  .select-file,
   input.style1,
   textarea.style1,
   select.style1,
@@ -8030,7 +8043,8 @@ textarea.style1 {
           flex: 1 0 0;
 }
 
-.upload-input input.style1 {
+.upload-input input.style1,
+.upload-input .select-file {
   pointer-events: none;
   border-right: none;
   -webkit-border-radius: 8px 0px 0px 8px;
@@ -8090,6 +8104,48 @@ textarea.style1 {
 .upload-input.error span:hover {
   background: #B5002E;
   color: #fff;
+}
+
+.upload-input .select-file-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.upload-input .select-file {
+  color: rgba(0, 0, 0, 0.16);
+}
+
+.upload-input .select-file__brows {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #EFEFF4;
+  border: 1px solid #D1D1D1;
+  -webkit-border-radius: 0px 8px 8px 0px;
+          border-radius: 0px 8px 8px 0px;
+  font-size: 18px;
+  width: 159px;
+  min-width: 159px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.upload-input .select-file__brows:hover {
+  background: #D1D1D1;
 }
 
 /*
@@ -8276,6 +8332,7 @@ textarea.style1 {
 .uploaded-files .item .thumb {
   display: block;
   height: 100%;
+  cursor: pointer;
 }
 
 .uploaded-files .item .delete {

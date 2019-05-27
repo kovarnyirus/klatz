@@ -196,14 +196,24 @@
                     <div class="error-text" style="display: none;">Файл больше 5 МБ!</div>
                     <label>Вы можете прикрепить фото весом до 5 МБ</label><!-- Если ошибка добавляем класс error к upload-input -->
                     <div class="upload-input">
-                      <label>
-                        <input type="file">
-                        <div class="input">
-                          <input class="style1 input" placeholder="Выбрать файл...">
-                        </div><span>Обзор</span>
-                      </label>
+                      <div class="select-file-wrap">
+                        <div class="select-file">Выбрать файл...</div><span class="select-file__brows">Обзор</span>
+                      </div>
+                      <!--label-->
+                      <!--  input(type="file" id="files" name="files")-->
+                      <!--  .input-->
+                      <!--    input.style1.input(placeholder="Выбрать файл...")-->
+                      <!--  span Обзор-->
                     </div>
-                    <div class="uploaded-files" style="display: none;"><a class="item" href="#"><span class="thumb" style="background-image: url(images/instagram.jpg)"></span><span class="delete">Удалить</span></a><a class="item" href="#"><span class="thumb" style="background-image: url(images/instagram.jpg)"></span><span class="delete">Удалить</span></a><a class="item" href="#"><span class="thumb" style="background-image: url(images/instagram.jpg)"></span><span class="delete">Удалить</span></a><a class="item plus" href="#"><i class="base-icon-plus"></i></a>
+                    <div class="uploaded-files" style="display: none;">
+                      <!-- - n = 0;-->
+                      <!-- while n < 3-->
+                      <!--   - n++;-->
+                      <!--   a(href="#").item-->
+                      <!--     span.thumb(style="background-image: url(images/instagram.jpg)")-->
+                      <!--     span.delete Удалить-->
+                      <!-- a(href="#").item.plus-->
+                      <!--   i.base-icon-plus-->
                     </div>
                   </div>
                   <div class="input-col last col-12 animate" data-animation="fadeInLeft">
