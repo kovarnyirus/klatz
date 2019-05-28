@@ -254,20 +254,25 @@ jQuery(document).ready(function () {
 });
 
 
-const FILE_TYPES = ['jpg', 'jpeg', 'png'];
-const INPUT_FILE_ADD = document.querySelector('.upload-input');
-// const ERROR_MESSAGE = document.querySelector('.error-text');
-const FILE_FIZE_MSG = document.querySelector('.file-size');
-const MAX_SIZE_IMG = 5242880;
-let loadFile;
-let previewImage;
-var fileField = document.querySelector('.select-file-wrap');
-var preview = document.querySelector('.uploaded-files');
+
+
+//        валидация прикрепленных файлов и отображение миниатюр
+
+var FILE_TYPES = ['jpg', 'jpeg', 'png'];
+var UPLOAD_INPUT_CONTAINER = document.querySelector('.upload-input');
+var ERROR_MSG_CONTAINER = document.querySelector('.file-size');
+var MAX_SIZE_IMG = 5242880;
+var PREVIEW_CONTAINER = document.querySelector('.uploaded-files');
+var FILE_FIELD = document.querySelector('.select-file-wrap');
+var loadFile;
+var previewImage;
+
+
 
 
 function pastInput() {
     previewImage.appendChild(loadFile);
-    preview.appendChild(previewImage);
+    PREVIEW_CONTAINER.appendChild(previewImage);
 };
 
 function removeFile(event) {
@@ -275,13 +280,13 @@ function removeFile(event) {
 };
 
 function showErr(msg) {
-    INPUT_FILE_ADD.classList.add('error');
-    FILE_FIZE_MSG.innerHTML = msg;
-    FILE_FIZE_MSG.classList.add('error-text');
+    UPLOAD_INPUT_CONTAINER.classList.add('error');
+    ERROR_MSG_CONTAINER.innerHTML = msg;
+    ERROR_MSG_CONTAINER.classList.add('error-text');
 }
 
 function checkFileType(file, types) {
-    for (let i = 0; i < types.length; i++) {
+    for (var i = 0; i < types.length; i++) {
         if (file.toLowerCase() === types[i].toLowerCase()){
             return true
         }
@@ -294,8 +299,8 @@ function onChangeInputFile(evt) {
     var img = document.createElement('img');
     var del = document.createElement('span');
     var deleteText = document.createTextNode('Удалить');
-    let fileSize = evt.target.files[0].size;
-    let fileNameArr = evt.target.files[0].name.split('.').pop();
+    var fileSize = evt.target.files[0].size;
+    var fileNameArr = evt.target.files[0].name.split('.').pop();
 
     if ( fileSize > MAX_SIZE_IMG) {
         showErr('Файл более 5 МБ');
@@ -304,15 +309,10 @@ function onChangeInputFile(evt) {
         showErr('Не верный формат файла');
         return;
     }
-
     reader.onload = function (event) {
-
-
         link.setAttribute('class', 'item');
-
         img.setAttribute('class', 'thumb');
         img.setAttribute('src', event.target.result);
-
         del.setAttribute('class', 'delete');
         del.appendChild(deleteText);
         del.addEventListener('click', removeFile)
@@ -322,14 +322,13 @@ function onChangeInputFile(evt) {
 
         previewImage = link;
         pastInput();
-        preview.style.display = 'flex';
+        PREVIEW_CONTAINER.style.display = 'flex';
     };
-
     reader.readAsDataURL(evt.target.files[0]);
 }
 
 function createInputTypeFile() {
-    let input = document.createElement('input');
+    var input = document.createElement('input');
     input.style = 'display: none';
     input.setAttribute('type', 'file');
     input.addEventListener('change', onChangeInputFile);
@@ -337,7 +336,7 @@ function createInputTypeFile() {
     loadFile = input;
 }
 
-fileField.addEventListener('click', function (event) {
+FILE_FIELD.addEventListener('click', function (event) {
     createInputTypeFile();
 }, false);
 
