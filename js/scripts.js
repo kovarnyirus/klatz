@@ -267,9 +267,6 @@ var FILE_FIELD = document.querySelector('.select-file-wrap');
 var loadFile;
 var previewImage;
 
-
-
-
 function pastInput() {
     previewImage.appendChild(loadFile);
     PREVIEW_CONTAINER.appendChild(previewImage);
