@@ -5078,7 +5078,7 @@ body {
 }
 
 .button-style1.filled:not([disabled]):hover {
-  color: #2051c8;
+  color: white;
 }
 
 .button-style1:before {
@@ -6893,6 +6893,38 @@ body {
   -webkit-background-size: auto 410px;
           background-size: auto 410px;
   margin: 10px 0 40px;
+  position: relative;
+}
+
+.catalog-section:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  width: 100%;
+  height: 410px;
+}
+
+@media (max-width: 991.98px) {
+  .catalog-section:before {
+    display: none;
+  }
+}
+
+.catalog-section:after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  width: 100%;
+  height: 410px;
+  background: 50% 0 no-repeat;
+}
+
+@media (max-width: 991.98px) {
+  .catalog-section:after {
+    display: none;
+  }
 }
 
 .catalog-section .container {
@@ -6953,6 +6985,23 @@ body {
   }
 }
 
+.catalog-section1:before {
+  background-color: #012B9B;
+  z-index: -1;
+  margin-top: 30px;
+}
+
+@media (max-width: 991.98px) {
+  .catalog-section1:before {
+    display: none;
+  }
+}
+
+.catalog-section1:after {
+  background-image: url(../images/bg6.jpg);
+  z-index: -1;
+}
+
 .catalog-section2 {
   background-image: url(../images/bg7.jpg);
 }
@@ -6963,6 +7012,23 @@ body {
     background-position: 100% 100%;
     background-image: url(../images/bg7-mob.jpg);
   }
+}
+
+.catalog-section2:before {
+  background-color: #2d97db;
+  z-index: -1;
+  margin-top: 30px;
+}
+
+@media (max-width: 991.98px) {
+  .catalog-section2:before {
+    display: none;
+  }
+}
+
+.catalog-section2:after {
+  background-image: url(../images/bg7.jpg);
+  z-index: -1;
 }
 
 .catalog-section3 {
@@ -6988,6 +7054,16 @@ body {
   .catalog-section3 {
     background: #000;
   }
+}
+
+.catalog-section3:before {
+  background-color: #000000;
+  z-index: -1;
+}
+
+.catalog-section3:after {
+  background-image: url(../images/bg8.jpg);
+  z-index: -1;
 }
 
 /*
@@ -7103,6 +7179,22 @@ body {
 
 .product-item.prod8:before {
   color: #62c3a5;
+}
+
+.product-item.prod9:hover {
+  border-color: #77d8d8;
+}
+
+.product-item.prod9:before {
+  color: #77d8d8;
+}
+
+.product-item.prod10:hover {
+  border-color: #c6b7d8;
+}
+
+.product-item.prod10:before {
+  color: #c6b7d8;
 }
 
 .product-item:before {
@@ -7766,8 +7858,8 @@ body {
 */
 .contacts-container {
   background: #F7F7F7 url(../images/contacts-img.png) 50% 50% no-repeat;
-  -webkit-background-size: auto 100%;
-          background-size: auto 100%;
+  -webkit-background-size: auto auto;
+          background-size: auto auto;
   padding-top: 162px;
   min-height: 1033px;
 }
@@ -8549,6 +8641,53 @@ textarea.style1 {
 
 .popup-message .button-style1 {
   width: 158px;
+}
+
+.product__icon {
+  max-width: 150px;
+}
+
+@media (max-width: 991.98px) {
+  .product__icon {
+    max-width: 95px;
+  }
+}
+
+.shop-on-map-section .top-container .right {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+@media (min-width: 576px) {
+  .shop-on-map-section .top-container .right {
+    max-width: 100%;
+  }
+}
+
+.shop-on-map-section .top-container .right .shop-logo:not(:last-child) {
+  margin-right: 10px;
+}
+
+.shop-on-map-section .top-container .right .shop-logo a img {
+  width: 120px;
+}
+
+@media (min-width: 992px) {
+  .shop-on-map-section .top-container .right .shop-logo a img {
+    width: 95px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .shop-on-map-section .top-container .right .shop-logo a img {
+    width: 120px;
+  }
+}
+
+.shop-logo {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 /*==========  Desktop First  ==========*/

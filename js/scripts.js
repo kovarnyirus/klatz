@@ -179,8 +179,8 @@ jQuery(document).ready(function () {
             }
         },
         navigation: {
-            prevEl: '.instagram-carousel .prev',
-            nextEl: '.instagram-carousel .next',
+            prevEl: '.brand-carousel .prev',
+            nextEl: '.brand-carousel .next',
         },
     });
 
@@ -273,7 +273,7 @@ function pastInput() {
 };
 
 function removeFile(event) {
-    event.explicitOriginalTarget.parentElement.remove()
+    event.target.parentElement.remove()
 };
 
 function showErr(msg) {

@@ -70,14 +70,14 @@ block content
       .product-icon-box.row
         -
           var array = [
-            {i: 'base-icon-tooth2', h: 'Реминерализация эмали'},
-            {i: 'base-icon-tooth3', h: 'Удаляет налёт'},
-            {i: 'base-icon-tooth4', h: 'Свежее дыхание'},
-            {i: 'base-icon-tooth6', h: 'Отбеливающий эффект'},
+            {i: 'tooth2.svg', h: 'Реминерализация эмали'},
+            {i: 'tooth3.svg', h: 'Удаляет налёт'},
+            {i: 'tooth4.svg', h: 'Свежее дыхание'},
+            {i: 'tooth6.svg', h: 'Отбеливающий эффект'},
           ]
         each i, index in array
           .col-6.col-md-3.animate(data-animation="fadeIn" style="animation-delay: "+index*300+"ms;")
-            i(class=i.i)
+            img.product__icon(width='150' src='../fonts/svg/base-icon/' + i.i)
             .title= i.h
     section.related-products-section.main-row.clearfix
       .container

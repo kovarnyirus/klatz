@@ -11,8 +11,8 @@ include ../mixins/_navigation.pug
 
 block vars
 
-- 
-  var 
+-
+  var
     body_class = color_scheme
 
 doctype html
@@ -33,6 +33,7 @@ html(lang="ru")
     link(rel="stylesheet" href="css/swiper.css")
     link(rel="stylesheet" href="css/animate.css")
     link(rel="stylesheet" href="css/iconfont.css")
+    link(rel="stylesheet" href="css/landing-main.css")
     link(rel="stylesheet" href="css/main.css")
 
   body(class=body_class)
@@ -62,12 +63,14 @@ html(lang="ru")
                     i.base-icon-fb
                   a(href="#")
                     i.base-icon-ig
+                  a(href="#")
+                    i.base-icon-yt
                 .lang-switch
                   a(href="#").current Рус
                   a(href="#") Eng
         .mobile-header
           .top
-            .l Меню 
+            .l Меню
             .close.base-icon-close
           .wrap
             nav.mobile-navigation

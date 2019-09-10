@@ -1,0 +1,127 @@
+extends templates/layout.pug
+
+block vars
+  -
+    var
+      title = 'Brutal  Only',
+      header_space = true,
+      footer = 'dark-scheme';
+
+block content
+  include include/_svg.pug
+  section.brutal-banner.full-height(data-parallax="scroll" data-ios-fix="false" data-android-fix="false" data-image-src="images/landing/bg.jpg" data-speed=".6")
+    .container
+      h1.h Brutal<br>Only
+      .text Создана для мужчин.<br>Привлекает женщин
+      .bottom
+        .left
+          a(href="#").button-style1
+            span Где купить
+          .scroll-down Листай ниже
+        .video-link
+          .img(style="background-image: url(images/landing/video-cover.png)")
+          .title Смотреть видео
+  .container
+    .product-in-row.row
+      .item.item1.col-12.col-lg-6
+        .detail-block
+          .icon.animate(data-animation="zoomIn" style="animation-delay: 700ms;")
+            img(src="images/prod_logo8.png", alt="Супер-мята")
+          .cat.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;") BRUTAL ONLY
+          h3.h.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;")
+            a(href="#") Супер-мята
+          .weight.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;") 75 мл
+        .description.animate(data-animation="fadeInLeft" style="animation-delay: 700ms;") Ты брутален, уверен в себе и привык добиваться своего? Тогда эта супер-черная зубная паста Brutal Only - твой выбор! Действуй!
+      .item.item2.col-12.col-lg-6
+        .detail-block
+          .icon.animate(data-animation="zoomIn" style="animation-delay: 700ms;")
+            img(src="images/prod_logo7.png", alt="Дикий можжевельник")
+          .cat.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;") BRUTAL ONLY
+          h3.h.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;")
+            a(href="#") Дикий<br>можжевельник
+          .weight.animate(data-animation="fadeInLeft" style="animation-delay: 500ms;") 75 мл
+        .description.animate(data-animation="fadeInLeft" style="animation-delay: 700ms;") До сих пор пользуешься разными пастами в цветастых, непонятных упаковках? Бросай все это и купи уже себе настоящую мужскую зубную пасту, потому что ты - настоящий мужик! Почувствуй дикость можжевельника!
+  .shop-on-map-section
+    .top-container.container
+      .heading-block.with-line
+        h3.h Где купить
+      .city-selector
+        label Ваш город:
+        select.style1
+          option Санкт - Петербург
+          option Санкт - Петербург
+          option Санкт - Петербург
+          option Санкт - Петербург
+      .right
+        .shop-logo
+          a(href="#")
+            img(src="images/brand1.png", alt="brand1")
+        .shop-logo
+          a(href="#")
+            img(src="images/brand2.png", alt="brand2")
+        .shop-logo
+          a(href="#")
+            img(src="images/ashan.png", alt="brand3")
+        .shop-logo
+          a(href="#")
+            img(src="images/perekrestok.png", alt="brand4")
+    .map-area
+      .map#map
+      .shop-items
+        .scrollbar-inner
+          - n = 0;
+          while n < 10
+            - n++;
+            .item
+              .label
+                .img
+                  img(src="images/brand1.png", alt="brand1")
+                .l Лента
+              .location Якорная ул., 5А, Санкт-Петербург, этаж -2
+  .popup-message.popup-message-style2.step1
+    .close.base-icon-close
+    .h Ты мужчина?
+    .buttons
+      a.button-style1.filled.black(href="#")
+        span КОНЕЧНО!
+      a.button-style1.filled.gray(href="#")
+        span Нет, а что?
+  .popup-message.popup-message-style2.step2
+    .close.base-icon-close
+    .text
+      p Приносим свои извинения!
+      p Но, “Brutal Only” создана исключительно для мужчин.
+      p Хотите приобрести эту пасту для своего мужчины?<br>Оставайтесь на этой страничке.
+      p Или посмотрите наши другие пасты
+
+append scripts
+  script(src="js/jquery.scrollbar.min.js")
+  script.
+    jQuery(document).ready(function() {
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(55.89122, 37.420746);
+        var mapOptions = {
+          zoom: 16,
+          center: myLatlng,
+          disableDefaultUI: true,
+          scrollwheel: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+        }
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        var myLatLng = new google.maps.LatLng(55.89122, 37.420746);
+        var beachMarker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+        });
+        google.maps.event.addDomListener(window, "resize", function () {
+          var center = map.getCenter();
+          google.maps.event.trigger(map, "resize");
+          map.setCenter(center);
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+      jQuery('.scrollbar-inner').scrollbar();
+      jQuery('.select2-results').scrollbar();
+    });
