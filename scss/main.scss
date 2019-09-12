@@ -6,6 +6,7 @@
 @import "../libs/bootstrap/scss/utilities/sizing";
 @import "extends";
 @import "default";
+@import "landing-main.scss";
 
 body {
   font-size: #{$default-font-size}px;
